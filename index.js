@@ -253,6 +253,10 @@ class OBSInstance extends InstanceBase {
 					this.buildSpecialInputs()
 					this.buildSceneList()
 				}
+				else {
+					//An error should be thrown to restart polling for a connection.
+					throw new Error('could not get intitial info.')
+				}
 			}
 		} catch (error) {
 			this.processWebsocketError(error)
